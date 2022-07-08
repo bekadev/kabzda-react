@@ -4,7 +4,7 @@ import {action} from "@storybook/addon-actions";
 import {Accordion} from "./Accordion";
 
 export default {
-    title: 'Accordion stories',
+    title: 'components/Accordion stories',
     component: Accordion,
 }
 

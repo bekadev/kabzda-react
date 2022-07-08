@@ -5,7 +5,7 @@ import {Raiting, RaitingValueType} from "./Raiting";
 
 
 export default {
-    title: 'Raiting stories',
+    title: 'components/Raiting stories',
     component: Raiting,
 }
 

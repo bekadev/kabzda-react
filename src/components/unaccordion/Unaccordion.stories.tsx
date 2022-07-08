@@ -4,7 +4,7 @@ import {action} from "@storybook/addon-actions";
 import {Unaccordion} from "./Unaccordion";
 
 export default {
-    title: 'Unaccordion stories',
+    title: 'components/Unaccordion stories',
     component: Unaccordion,
 }
 

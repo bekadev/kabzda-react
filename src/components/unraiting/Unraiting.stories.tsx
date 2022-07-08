@@ -5,7 +5,7 @@ import {Unraiting} from "./Unraiting";
 
 
 export default {
-    title: 'Unraiting stories',
+    title: 'components/Unraiting stories',
     component: Unraiting,
 }
 
