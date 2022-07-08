@@ -3,6 +3,7 @@ import './App.css';
 import {Raiting} from "./components/raiting/Raiting";
 import {Accordion} from "./components/accordion/Accordion";
 import {Map} from "./components/map/Map";
+import {OnOff} from "./components/OnOff/OnOff";
 
 function App() {
 
@@ -30,8 +31,13 @@ function App() {
   return (
     <div>
         <div>
+            <Raiting value={1}/>
+            <Raiting value={2}/>
             <Raiting value={3}/>
-            <Accordion title={'night'}/>
+            <Raiting value={4}/>
+            <Raiting value={5}/>
+            <Accordion title={'night'} collapsed={true}/>
+            <OnOff />
             <Map students={students} nameBase={nameBase}/>
         </div>
     </div>
