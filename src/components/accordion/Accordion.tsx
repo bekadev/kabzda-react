@@ -3,12 +3,15 @@ import React from 'react';
 type PropsType = {
     title: string
     collapsed: boolean
+    onChange: () => void
 }
 
 export const Accordion: React.FC<PropsType> = (props) => {
     return (
         <div>
-            <AccordionTitle title={props.title}/>
+            <AccordionTitle
+                onChange={props.onChange}
+                title={props.title}/>
             { !props.collapsed && <AccordionBody/>}
         </div>
     );
@@ -16,12 +19,13 @@ export const Accordion: React.FC<PropsType> = (props) => {
 
 type AccordionTitle = {
     title: string
+    onChange: () => void
 }
 
 const AccordionTitle = (props: AccordionTitle) => {
     return (
         <div>
-            <p>{props.title}</p>
+            <p onClick={props.onChange}>{props.title}</p>
         </div>
     );
 };

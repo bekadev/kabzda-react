@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Raiting} from "./components/raiting/Raiting";
+import {Raiting, RaitingValueType} from "./components/raiting/Raiting";
 import {Accordion} from "./components/accordion/Accordion";
 import {Map} from "./components/map/Map";
 import {OnOff} from "./components/OnOff/OnOff";
 import {Unaccordion} from "./components/unaccordion/Unaccordion";
 import {Unraiting} from "./components/unraiting/Unraiting";
+import {UnOnOff} from "./components/UnOnOff/UnOnOff";
 
 function App() {
 
@@ -29,19 +30,30 @@ function App() {
         {id: 3, name: "Kuat", age: 22}
     ]
 
+    const [raitingValue, setRaitingValue] = useState<RaitingValueType>(4)
+    const [collapsed, setCollapsed] = useState<boolean>(false)
 
-  return (
-    <div>
+    let [on, setOn] = useState(false)
+
+    return (
         <div>
-            <Raiting value={1}/>
-            <Unraiting />
-            <Accordion title={'night'} collapsed={true}/>
-            <Unaccordion title={'night'}/>
-            <OnOff />
-            <Map students={students} nameBase={nameBase}/>
+            <div>
+                <Raiting value={raitingValue}
+                         onClick={setRaitingValue}/>
+                <Unraiting/>
+                <Accordion title={'night'}
+                           collapsed={collapsed}
+                           onChange={() => {
+                               setCollapsed(!collapsed)
+                           }}/>
+                {/*<Unaccordion title={'night'}/>*/}
+                {/*<OnOff on={on} setOn={setOn}/>*/}
+                <hr/>
+                <UnOnOff setOn={setOn}/> {on.toString()}
+                <Map students={students} nameBase={nameBase}/>
+            </div>
         </div>
-    </div>
-  );
+    );
 }
 
 export default App;

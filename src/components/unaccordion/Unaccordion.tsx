@@ -13,7 +13,7 @@ export const Unaccordion: React.FC<PropsType> = (props) => {
     }
     return (
         <div>
-            <AccordionTitle title={props.title}/> <button onClick={ClickHandler}>toggle</button>
+            <AccordionTitle title={props.title} onClick={ClickHandler}/>
             { !collapsed && <AccordionBody/>}
         </div>
     );
@@ -21,12 +21,13 @@ export const Unaccordion: React.FC<PropsType> = (props) => {
 
 type AccordionTitle = {
     title: string
+    onClick: () => void
 }
 
 const AccordionTitle = (props: AccordionTitle) => {
     return (
         <div>
-            <p>{props.title}</p>
+            <p onClick={props.onClick}>{props.title}</p>
         </div>
     );
 };
