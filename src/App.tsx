@@ -4,6 +4,8 @@ import {Raiting} from "./components/raiting/Raiting";
 import {Accordion} from "./components/accordion/Accordion";
 import {Map} from "./components/map/Map";
 import {OnOff} from "./components/OnOff/OnOff";
+import {Unaccordion} from "./components/unaccordion/Unaccordion";
+import {Unraiting} from "./components/unraiting/Unraiting";
 
 function App() {
 
@@ -32,11 +34,9 @@ function App() {
     <div>
         <div>
             <Raiting value={1}/>
-            <Raiting value={2}/>
-            <Raiting value={3}/>
-            <Raiting value={4}/>
-            <Raiting value={5}/>
+            <Unraiting />
             <Accordion title={'night'} collapsed={true}/>
+            <Unaccordion title={'night'}/>
             <OnOff />
             <Map students={students} nameBase={nameBase}/>
         </div>
