@@ -7,6 +7,8 @@ import {OnOff} from "./components/OnOff/OnOff";
 import {Unaccordion} from "./components/unaccordion/Unaccordion";
 import {Unraiting} from "./components/unraiting/Unraiting";
 import {UnOnOff} from "./components/UnOnOff/UnOnOff";
+import {action} from "@storybook/addon-actions";
+import {Localstorage} from "./components/localstorage/Localstorage";
 
 function App() {
 
@@ -38,19 +40,30 @@ function App() {
     return (
         <div>
             <div>
-                <Raiting value={raitingValue}
-                         onClick={setRaitingValue}/>
-                <Unraiting/>
-                <Accordion title={'night'}
-                           collapsed={collapsed}
-                           onChange={() => {
-                               setCollapsed(!collapsed)
-                           }}/>
+                <Localstorage />
+{/*                <Raiting value={raitingValue}*/}
+{/*                         onClick={setRaitingValue}/>*/}
+{/*                <Unraiting/>*/}
+{/*                <Accordion*/}
+{/*onClick={action('click')}*/}
+{/*items={*/}
+{/*    [*/}
+{/*        {title: 'beka', value: 1},*/}
+{/*        {title: 'kyzyrbayev', value: 2},*/}
+{/*        {title: 'almaty', value: 3},*/}
+{/*        {title: 'astana', value: 4}*/}
+{/*    ]*/}
+{/*}*/}
+{/*                    title={'night'}*/}
+{/*                    collapsed={collapsed}*/}
+{/*                    onChange={() => {*/}
+{/*                        setCollapsed(!collapsed)*/}
+{/*                    }}/>*/}
                 {/*<Unaccordion title={'night'}/>*/}
                 {/*<OnOff on={on} setOn={setOn}/>*/}
                 <hr/>
-                <UnOnOff setOn={setOn}/> {on.toString()}
-                <Map students={students} nameBase={nameBase}/>
+                {/*<UnOnOff setOn={setOn}/> {on.toString()}*/}
+                {/*<Map students={students} nameBase={nameBase}/>*/}
             </div>
         </div>
     );

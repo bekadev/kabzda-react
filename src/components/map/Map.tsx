@@ -15,7 +15,7 @@ export const Map: React.FC<MapPropsType> = (props) => {
     return (
         <div>
             <ul>
-                {props.students.map(el => <li>{el.name} <span>age: {el.age}</span></li>)}
+                {props.students.map(el => <li key={el.id}>{el.name} <span>age: {el.age}</span></li>)}
             </ul>
             <ul>
                 {props.nameBase.map(element => <li>{element.id}</li> )}
