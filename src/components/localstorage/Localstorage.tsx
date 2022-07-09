@@ -1,21 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 export const Localstorage = () => {
     const [value, setValue] = useState<number>(0)
-    const onClickHandler = () => {
-        setValue(value + 1)
-    }
-    const setToLocalstorageHandler = () => {
-        localStorage.setItem('counterValue', JSON.stringify(value))
-        localStorage.setItem('counterValue + 1', JSON.stringify(value + 1))
-    }
-    const getToLocalstorageHandler = () => {
+
+    useEffect(() => {
         let valueAsString =  localStorage.getItem('counterValue')
         if (valueAsString) {
             let newValue =  JSON.parse(valueAsString)
             setValue(newValue)
         }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('counterValue', JSON.stringify(value))
+    }, [value])
+
+    const onClickHandler = () => {
+        setValue(value + 1)
     }
+
     const clearLocalstorageHandler = () => {
         localStorage.clear()
         setValue(0)
@@ -27,10 +30,10 @@ export const Localstorage = () => {
         <div>
             <h3>{value}</h3>
             <button onClick={onClickHandler}>inc</button>
-            <button onClick={setToLocalstorageHandler}>setToLocalstorage</button>
-            <button onClick={getToLocalstorageHandler}>getToLocalstorage</button>
-            <button onClick={clearLocalstorageHandler}>clearLocalstorage</button>
-            <button onClick={removeItemLocalstorageHandler}>removeItemLocalstorage</button>
+            {/*<button onClick={setToLocalstorageHandler}>setToLocalstorage</button>*/}
+            {/*<button onClick={getToLocalstorageHandler}>getToLocalstorage</button>*/}
+            {/*<button onClick={clearLocalstorageHandler}>clearLocalstorage</button>*/}
+            {/*<button onClick={removeItemLocalstorageHandler}>removeItemLocalstorage</button>*/}
         </div>
     );
 };
