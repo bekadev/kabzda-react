@@ -26,7 +26,13 @@ export const Select: React.FC<SelectPropsType> = (props) => {
             <span className={style.main} onClick={onClickItems}>{selectedItem && selectedItem.title}</span>
             {
                 active && <div className={style.items}>
-                    {props.items.map(i => <div onClick={() => props.onChange(i.value)} key={i.value}>{i.title}</div>)}
+                    {props.items.map(i =>
+                        <div
+                            onClick={() => props.onChange(i.value)}
+                            key={i.value}
+                        >{i.title}
+                        </div>
+                    )}
                 </div>
             }
         </div>
