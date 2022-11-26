@@ -1,16 +1,27 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 
 type PropsType = {
     title: string
 }
 
+type ActionType = {
+    type: string
+}
+
+const reducer = (state: boolean, action: ActionType) => {
+    if (action.type === 'TOOGLE-COLLAPSED') {
+        return !state;
+    }
+
+    return state;
+}
+
 export const Unaccordion: React.FC<PropsType> = (props) => {
 
-    const [collapsed, Setcollapsed] = useState(false)
+    // const [collapsed, Setcollapsed] = useState(false)
+    const [collapsed, dispatch] = useReducer(reducer, false)
 
-    const ClickHandler = () =>  {
-        Setcollapsed(!collapsed)
-    }
+    const ClickHandler = () =>  {dispatch({type: 'TOOGLE-COLLAPSED'})}
     return (
         <div>
             <AccordionTitle title={props.title} onClick={ClickHandler}/>
