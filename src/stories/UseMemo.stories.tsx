@@ -67,4 +67,4 @@ export const Example2 = () => {
         {counter}
         <Users users={newArray}/>
     </>
-}
+} 

@@ -32,8 +32,8 @@ export const Localstorage = () => {
             <button onClick={onClickHandler}>inc</button>
             {/*<button onClick={setToLocalstorageHandler}>setToLocalstorage</button>*/}
             {/*<button onClick={getToLocalstorageHandler}>getToLocalstorage</button>*/}
-            {/*<button onClick={clearLocalstorageHandler}>clearLocalstorage</button>*/}
-            {/*<button onClick={removeItemLocalstorageHandler}>removeItemLocalstorage</button>*/}
+            <button onClick={clearLocalstorageHandler}>clearLocalstorage</button>
+            <button onClick={removeItemLocalstorageHandler}>removeItemLocalstorage</button>
         </div>
     );
 };
