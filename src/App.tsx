@@ -60,6 +60,8 @@ function App() {
                         setCollapsed(!collapsed)
                     }}/>
                 <Unaccordion title={'night'}/>
+
+                {/*test*/}
                 {/*<OnOff on={on} setOn={setOn}/>*/}
                 <hr/>
                 <UnOnOff setOn={setOn}/> {on.toString()}
