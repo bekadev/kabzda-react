@@ -9,6 +9,7 @@ import {Unraiting} from './components/unraiting/Unraiting';
 import {UnOnOff} from './components/UnOnOff/UnOnOff';
 import {action} from '@storybook/addon-actions';
 import {Localstorage} from './components/localstorage/Localstorage';
+import {Clock} from './components/clock/Clock';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
     return (
         <div>
             <div>
+                <Clock />
                 <Localstorage/>
                 <Raiting value={raitingValue}
                          onClick={setRaitingValue}/>
